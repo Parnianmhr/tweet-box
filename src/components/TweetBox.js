@@ -28,9 +28,14 @@ class TweetBox extends PureComponent {
 
   overFlowAlert() {
     if (this.remainingCharacters() < 0) {
+      var beforeOverflowText = this.state.text.substring(140 - 10, 140);
+      var overflowText = this.state.text.substring(140);
+
       return(
         <div className="alert alert-warning">
           <strong>Oops! Too long:</strong>
+          ... { beforeOverflowText }
+          <strong className="bg-danger">{ overflowText }</strong>
         </div>
       )
     } else {

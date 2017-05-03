@@ -32,7 +32,7 @@ class TweetBox extends PureComponent {
         <textarea className="form-control" onChange={this.handleChange.bind(this)}></textarea>
         <br/>
         <span>{this.remainingCharacters()}</span>
-        <button className="btn btn-primary pull-right" disabled={this.state.text.length === 0} >Tweet</button>
+        <button className="btn btn-primary pull-right" disabled={this.remainingCharacters() === 140} >Tweet</button>
         <button className="btn btn-default pull-left" onClick={this.togglePhoto.bind(this)}> { this.state.photoAdded ? "✓ Photo Added" : "Add Photo" } </button>
       </div>
     )

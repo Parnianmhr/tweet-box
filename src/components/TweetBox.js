@@ -26,9 +26,22 @@ class TweetBox extends PureComponent {
     }
   }
 
+  overFlowAlert() {
+    if (this.remainingCharacters() < 0) {
+      return(
+        <div className="alert alert-warning">
+          <strong>Oops! Too long:</strong>
+        </div>
+      )
+    } else {
+      return ""
+    }
+  }
+
   render() {
     return(
       <div className="well clearfix">
+      { this.overFlowAlert() }
         <textarea className="form-control" onChange={this.handleChange.bind(this)}></textarea>
         <br/>
         <span>{this.remainingCharacters()}</span>

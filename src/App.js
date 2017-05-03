@@ -11,7 +11,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Tweet me!</h2>
         </div>
-        <TweetBox />
+        <div className="tweet">
+          <TweetBox />
+        </div>
       </div>
     );
   }
